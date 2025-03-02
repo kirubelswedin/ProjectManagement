@@ -1,0 +1,46 @@
+.base-button {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: medium;
+	letter-spacing: 0.5px;
+	transition: all 0.2s ease;
+}
+
+/* Primary */
+.primary-button {
+	background-color: var(--button-color-blue);
+	color: var(--background-light);
+}
+
+.primary-button:hover {
+	background-color: var(--lightblue-color-2);
+	border-color: var(--lightblue-color-2);
+}
+
+/* Secondary */
+.secondary-button {
+	background-color: var(--background-light);
+	color: var(--dark-color);
+}
+
+.secondary-button:hover {
+	background-color: var(--lightgrey-color);
+}
+
+/* Inverted */
+.inverted-button {
+	background-color: var(--background-light);
+	color: var(--lightblue-color-2);
+}
+
+.inverted-button:hover {
+	background-color: var(--lightgrey-color);
+}

@@ -1,0 +1,70 @@
+.header {
+  background-color: var(--background-light);
+  border-bottom: 1px solid var(--lightgrey-color-2);
+  position: sticky;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7rem 1rem;
+  z-index: 7;
+}
+
+.nav {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.nav-left .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--button-color-blue);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-middle {
+  max-width: 30rem;
+  width: 40%;
+  margin-right: -4.5rem;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.base-button.contact {
+  border: solid 1px var(--lightblue-color-2);
+}
+.base-button.contact:hover {
+  background-color: var(--lightgrey-color);
+}
+
+.base-button.signin {
+  padding: 0.8rem 1rem;
+}

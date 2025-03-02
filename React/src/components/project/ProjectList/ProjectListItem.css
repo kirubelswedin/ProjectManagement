@@ -1,0 +1,53 @@
+.project-link {
+  text-decoration: none;
+  font-weight: 500;
+  /* font-size: 0.8rem; */
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.checkbox-column {
+  width: 2.5rem;
+  text-align: center;
+}
+
+.checkbox-column input {
+  cursor: pointer;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 0.3rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.status-ej-påbörjad {
+  background-color: #6c757d21;
+  color: #6c757d;
+}
+
+.status-pågående {
+  background-color: #007bff27;
+  color: #007bff;
+}
+
+.status-pausad {
+  background-color: #fd7d1426;
+  color: #fd7e14;
+}
+
+.status-avslutad {
+  background-color: #28a7462b;
+  color: #28a745;
+}
+
+.status-avbruten {
+  background-color: #dc35462c;
+  color: #dc3545;
+}

@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    build:
+      context: ./Docker
+      dockerfile: sql.Dockerfile
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Kolbulle1!
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+  webapi:
+    container_name: webapi
+    build:
+      context: .
+      dockerfile: src/WebAPI/Dockerfile
+    ports:
+      - "7001:7001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7001
+      - ConnectionStrings__SqlServer=Server=host.docker.internal;Database=ProjectManagement;User Id=sa;Password=Kolbulle1!;TrustServerCertificate=True
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./src/React
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/React:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:7001/api
+    depends_on:
+      - webapi
+
+volumes:
+  sqlserver_data: 

@@ -1,0 +1,44 @@
+.projects-page {
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.projects-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.base-button.create-new {
+  min-width: 7.5rem;
+}
+
+.projects-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.search-bar {
+  max-width: 25rem;
+  width: 100%;
+}
+
+.error-message {
+  padding: 12px;
+  background-color: var(--error-light-color);
+  color: var(--error-color);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,103 @@
+.signin-panel {
+	position: fixed;
+	height: calc(100% - 6.4rem);
+	top: calc(4.3rem);
+	right: -100%;
+	width: 100%;
+	max-width: 30rem;
+	height: calc(98.5vh - 4rem);
+	background-color: var(--dark-color);
+	transition: right 0.3s ease-in-out;
+	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+	border-radius: 0.5rem;
+	margin-right: 0.5rem;
+	overflow-x: hidden;
+	overflow-y: overlay;
+	z-index: 10;
+}
+
+.signin-panel.open {
+	right: 0;
+}
+
+.signin-panel-content {
+	padding: 5rem 1rem 0 1rem;
+	color: white;
+}
+
+.close-button {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.signin-panel h2 {
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 1.4rem;
+	letter-spacing: 0.5px;
+}
+
+.base-button.bankid {
+	max-height: 2.6rem;
+	margin-bottom: 1rem;
+}
+
+.divider {
+	text-align: center;
+	margin: 1.5rem 0;
+	position: relative;
+}
+
+.divider::before,
+.divider::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 45%;
+	height: 1px;
+	background-color: #4b5563;
+}
+
+.divider::before {
+	left: 0;
+}
+
+.divider::after {
+	right: 0;
+}
+
+.divider span {
+	color: #ffffff;
+}
+
+input {
+	width: 100%;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border: 1px solid #4b5563;
+	border-radius: 8px;
+	background-color: #12131c;
+	outline: none;
+	color: white;
+}
+input:hover {
+	border-color: rgb(173, 173, 173);
+}
+input::placeholder {
+	color: rgb(255, 255, 255, 0.7);
+}
+
+.base-button.next {
+	background-color: #6348f7;
+	/* margin-bottom: 1rem; */
+}
+
+.base-button.next:hover {
+	background-color: #7359ff;
+}

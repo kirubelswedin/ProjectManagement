@@ -1,0 +1,30 @@
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5rem;
+	width: 100%;
+}
+
+.section-header-text {
+	flex: 1;
+}
+
+.section-title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--grey-color);
+	margin: 0;
+	margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+	font-size: 0.875rem;
+	color: var(--grey-color);
+	margin: 0;
+}
+
+.section-action {
+	display: flex;
+	align-items: center;
+}

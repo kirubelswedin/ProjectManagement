@@ -1,0 +1,151 @@
+@media screen and (width >= 87.5625rem) {
+  .nav {
+    max-width: 106.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 1rem;
+  }
+}
+
+@media screen and (width <= 75rem) {
+  /* nav */
+  .nav-middle {
+    max-width: 30rem;
+    width: 45%;
+    margin-right: 0rem;
+  }
+  /* Quick Actions */
+  .action-button {
+    flex-direction: column;
+  }
+}
+
+@media screen and (width <= 50rem) {
+  /* Header */
+  .nav-right {
+    display: flex;
+    justify-content: end;
+  }
+  .nav-middle {
+    display: none;
+  }
+  .nav-left {
+    display: flex;
+    justify-content: start;
+  }
+  .base-button.contact {
+    display: none;
+  }
+
+  /* SigninPanel */
+  .signin-panel {
+    max-width: 22.4rem;
+  }
+
+  /* HomePage */
+  .home-page {
+    padding: 1rem;
+  }
+  .welcome-section {
+    margin-bottom: 2rem;
+  }
+  .welcome-section h1 {
+    font-size: 1.75rem;
+  }
+  .welcome-section p {
+    font-size: 1rem;
+  }
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+  .action-button {
+    padding: 1rem;
+  }
+
+  /* StatsGrid */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem;
+  }
+  .stats-grid-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  /* StatCard */
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  .stat-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* SectionHeader */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .section-action {
+    width: 100%;
+  }
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  /* ProjectList */
+  .status-tabs {
+    padding-bottom: 0.5rem;
+  }
+  .tab {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* ContactForm */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .contact-form {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (width <= 31.25rem) {
+  /* signin-panel */
+  .signin-panel {
+    position: fixed;
+    top: 0;
+    max-width: 100%;
+    height: 100vh;
+    margin-right: 0;
+    border-radius: 0;
+    z-index: 99;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+
+  .status-filter {
+    padding: 8px 4px;
+  }
+
+  .status-filter-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .form-group:has(textarea) {
+    grid-column: span 1;
+  }
+}

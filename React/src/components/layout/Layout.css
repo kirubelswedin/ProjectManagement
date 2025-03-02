@@ -1,0 +1,18 @@
+/* Overlay for the login panel */
+.signin-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backdrop-filter: brightness(0.7);
+	-webkit-backdrop-filter: brightness(0.7);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease, visibility 0.3s;
+	z-index: 8;
+}
+.signin-overlay.open {
+	visibility: visible;
+	opacity: 1;
+}

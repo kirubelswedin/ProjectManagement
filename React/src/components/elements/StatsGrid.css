@@ -1,0 +1,31 @@
+.stats-grid-container {
+  width: 100%;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.stats-grid-container::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(0, 120, 212, 0.05) 0%, rgba(0, 120, 212, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.stats-grid-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--grey-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 1.5rem;
+  position: relative;
+}
