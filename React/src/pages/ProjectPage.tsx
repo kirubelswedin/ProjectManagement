@@ -33,7 +33,7 @@ export const ProjectPage: FC = () => {
       setIsSubmitting(true)
       setFormError(null)
 
-      console.log('Submitting form data:', formData)
+      // console.log('Submitting form data:', formData)
 
       if (isCreateMode) {
         const result = await addProject(formData as Omit<Project, 'id' | 'projectNumber'>)
@@ -46,20 +46,8 @@ export const ProjectPage: FC = () => {
           navigate('/projects')
         }
       }
-    } catch (err) {
-      console.error('Error submitting form:', err)
-
-      if (err instanceof SyntaxError) {
-        setFormError(
-          'Ett fel uppstod när projektet skulle sparas. Servern returnerade ett ogiltigt svar. Kontakta systemadministratören.'
-        )
-      } else if (err instanceof Error && err.message.includes('500')) {
-        setFormError(
-          'Ett serverfel uppstod. Vänligen försök igen senare eller kontakta systemadministratören.'
-        )
-      } else {
-        setFormError('Ett fel uppstod när projektet skulle sparas. Försök igen.')
-      }
+    } catch {
+      // console.error('Error submitting form:', err)
 
       setTimeout(() => {
         navigate('/projects', { replace: true })

@@ -9,7 +9,6 @@ let projectManagersCache: ProjectManager[] | null = null
 let serviceTypesCache: ServiceType[] | null = null
 let statusesCache: Status[] | null = null
 
-// Kontexttyp för referensdata
 interface ReferenceDataContextType {
   clients: Client[]
   projectManagers: ProjectManager[]
@@ -20,14 +19,13 @@ interface ReferenceDataContextType {
   refetch: () => Promise<void>
 }
 
-// Skapa kontexten
 export const ReferenceDataContext = createContext<ReferenceDataContextType | undefined>(undefined)
 
 interface ReferenceDataProviderProps {
   children: ReactNode
 }
 
-// Generisk typ för datakonfiguration
+// generic type for data configuration
 interface DataConfig<T> {
   fetch: () => Promise<T[]>
   path: string
@@ -36,6 +34,8 @@ interface DataConfig<T> {
   cache: (data: T[]) => void
 }
 
+// Took help from gpt to implement this reference data provider
+// manages the reference data, makes data available to the app
 export const ReferenceDataProvider = ({ children }: ReferenceDataProviderProps) => {
   const [clients, setClients] = useState<Client[]>(clientsCache || [])
   const [projectManagers, setProjectManagers] = useState<ProjectManager[]>(

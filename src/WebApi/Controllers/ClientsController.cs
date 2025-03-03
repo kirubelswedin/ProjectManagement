@@ -11,7 +11,7 @@ public class ClientsController(IClientService clientService) : ControllerBase
     private readonly IClientService _clientService = clientService;
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateClientDto dto)
+    public async Task<IActionResult> Create(CreateClientDto dto)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
@@ -54,7 +54,7 @@ public class ClientsController(IClientService clientService) : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateClientDto dto)
+    public async Task<IActionResult> Update(int id, UpdateClientDto dto)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);

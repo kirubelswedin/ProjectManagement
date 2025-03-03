@@ -9,7 +9,7 @@ namespace WebApi.Controllers;
 public class ServiceTypesController(IServiceTypeService serviceTypeService) : ControllerBase
 {
   [HttpPost]
-  public async Task<IActionResult> Create([FromBody] CreateServiceTypeDto dto)
+  public async Task<IActionResult> Create(CreateServiceTypeDto dto)
   {
     if (!ModelState.IsValid)
       return BadRequest(ModelState);
@@ -42,7 +42,7 @@ public class ServiceTypesController(IServiceTypeService serviceTypeService) : Co
   }
 
   [HttpPut("{id}")]
-  public async Task<IActionResult> Update(int id, [FromBody] UpdateServiceTypeDto dto)
+  public async Task<IActionResult> Update(int id, UpdateServiceTypeDto dto)
   {
     if (!ModelState.IsValid)
       return BadRequest(ModelState);

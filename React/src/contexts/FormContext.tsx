@@ -46,6 +46,7 @@ interface FormProviderProps {
   children: ReactNode
 }
 
+// Took help from gpt to implement this form context
 export const FormProvider = ({ children }: FormProviderProps) => {
   const [formData, setFormData] = useState<FormData>({})
   const [isSubmitting, setIsSubmitting] = useState(false)

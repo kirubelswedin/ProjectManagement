@@ -9,7 +9,7 @@ namespace WebApi.Controllers;
 public class ProjectsController(IProjectService projectService) : ControllerBase
 {
   [HttpPost]
-  public async Task<IActionResult> Create([FromBody] CreateProjectDto dto)
+  public async Task<IActionResult> Create(CreateProjectDto dto)
   {
     if (!ModelState.IsValid)
       return BadRequest(ModelState);
@@ -42,7 +42,7 @@ public class ProjectsController(IProjectService projectService) : ControllerBase
   }
 
   [HttpPut("{id}")]
-  public async Task<IActionResult> Update(int id, [FromBody] UpdateProjectDto dto)
+  public async Task<IActionResult> Update(int id, UpdateProjectDto dto)
   {
     if (!ModelState.IsValid)
       return BadRequest(ModelState);

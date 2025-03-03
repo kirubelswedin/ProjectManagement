@@ -13,6 +13,7 @@ public class ProjectRepository(DataContext context) : BaseRepository<ProjectEnti
     {
         try
         {
+            // Include all related entities
             var entities = await _context.Projects
                 .Include(p => p.Status)
                 .Include(p => p.Client)
@@ -46,7 +47,7 @@ public class ProjectRepository(DataContext context) : BaseRepository<ProjectEnti
             return null;
         }
     }
-    
+
     public async Task<int> GetMaxProjectNumberAsync()
     {
         try

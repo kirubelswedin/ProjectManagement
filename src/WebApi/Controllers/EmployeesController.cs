@@ -9,7 +9,7 @@ namespace WebApi.Controllers;
 public class EmployeesController(IEmployeeService employeeService) : ControllerBase
 {
   [HttpPost]
-  public async Task<IActionResult> Create([FromBody] CreateEmployeeDto dto)
+  public async Task<IActionResult> Create(CreateEmployeeDto dto)
   {
     if (!ModelState.IsValid)
       return BadRequest(ModelState);
@@ -52,7 +52,7 @@ public class EmployeesController(IEmployeeService employeeService) : ControllerB
   }
 
   [HttpPut("{id}")]
-  public async Task<IActionResult> Update(int id, [FromBody] UpdateEmployeeDto dto)
+  public async Task<IActionResult> Update(int id, UpdateEmployeeDto dto)
   {
     if (!ModelState.IsValid)
       return BadRequest(ModelState);

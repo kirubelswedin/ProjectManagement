@@ -29,6 +29,8 @@ interface ProjectProviderProps {
   children: ReactNode
 }
 
+// Took help from gpt to implement this project context
+// manages the project data and project related operations
 export const ProjectProvider = ({ children }: ProjectProviderProps) => {
   const [projects, setProjects] = useState<Project[]>(projectsCache || [])
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)

@@ -4,8 +4,11 @@ using Data.Entities;
 
 namespace WebApi.Helper;
 
+
+// Initializes the database with default data. Took some help from gpt.
 public static class DbInitializer
 {
+
     public static void Initialize(DataContext context)
     {
         // ServiceTypes

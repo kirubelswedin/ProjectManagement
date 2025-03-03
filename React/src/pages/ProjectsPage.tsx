@@ -38,7 +38,7 @@ export const ProjectsPage: FC = () => {
       })
     }
 
-    // Filter by search query
+    // Took help from gpt to implement this filter by search query
     if (searchQuery) {
       const query = searchQuery.toLowerCase()
       filtered = filtered.filter(
