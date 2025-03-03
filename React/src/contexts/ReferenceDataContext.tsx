@@ -34,7 +34,7 @@ interface DataConfig<T> {
   cache: (data: T[]) => void
 }
 
-// Took help from gpt to implement this reference data provider
+// Took some help from gpt to implement this reference data provider
 // manages the reference data, makes data available to the app
 export const ReferenceDataProvider = ({ children }: ReferenceDataProviderProps) => {
   const [clients, setClients] = useState<Client[]>(clientsCache || [])
@@ -70,7 +70,7 @@ export const ReferenceDataProvider = ({ children }: ReferenceDataProviderProps) 
         return true
       } catch {
         try {
-          const module = await import(config.path)
+          const module = await import(/* @vite-ignore */ config.path)
           const fallbackData = module[config.key]
           config.setter(fallbackData)
           config.cache(fallbackData)

@@ -38,7 +38,7 @@ A modern project management system built with React and .NET for managing projec
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/ProjectManagement.git
+   git clone https://github.com/kirubelswedin/ProjectManagement.git
    cd ProjectManagement
    ```
 

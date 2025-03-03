@@ -13,16 +13,29 @@ public class EmployeeRepository(DataContext context) : BaseRepository<EmployeeEn
   {
     try
     {
-      var entities = await _context.Employees
-          .Include(e => e.Department)
-          .Include(e => e.Address)
-          .ToListAsync();
-      return entities;
+      // Easier to test and more flexible
+      return await _context.Employees.ToListAsync();
     }
     catch (Exception ex)
     {
       Debug.WriteLine(ex.Message);
-      return [];
+      return null;
+    }
+  }
+
+  public async Task<IEnumerable<EmployeeEntity>?> GetAllWithDetailsAsync()
+  {
+    try
+    {
+      return await _context.Employees
+          .Include(e => e.Department)
+          .Include(e => e.Address)
+          .ToListAsync();
+    }
+    catch (Exception ex)
+    {
+      Debug.WriteLine(ex.Message);
+      return null;
     }
   }
 
@@ -30,11 +43,24 @@ public class EmployeeRepository(DataContext context) : BaseRepository<EmployeeEn
   {
     try
     {
-      var entity = await _context.Employees
+      return await _context.Employees
+          .FirstOrDefaultAsync(predicate);
+    }
+    catch (Exception ex)
+    {
+      Debug.WriteLine(ex.Message);
+      return null;
+    }
+  }
+
+  public async Task<EmployeeEntity?> GetWithDetailsAsync(Expression<Func<EmployeeEntity, bool>> predicate)
+  {
+    try
+    {
+      return await _context.Employees
           .Include(e => e.Department)
           .Include(e => e.Address)
           .FirstOrDefaultAsync(predicate);
-      return entity;
     }
     catch (Exception ex)
     {

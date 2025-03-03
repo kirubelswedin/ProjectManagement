@@ -54,7 +54,8 @@ public class EmployeeService(IEmployeeRepository employeeRepository) : IEmployee
     {
         try
         {
-            var entity = await _employeeRepository.GetAsync(e => e.Id == id);
+            // Get employee with details
+            var entity = await _employeeRepository.GetWithDetailsAsync(e => e.Id == id);
             if (entity == null)
                 return ResponseResult<EmployeeDto>.NotFound($"Employee with id {id} not found");
 
@@ -82,7 +83,6 @@ public class EmployeeService(IEmployeeRepository employeeRepository) : IEmployee
             var matchingEmployees = entities
                 .Where(e => e.FirstName.ToLower().Contains(searchTermLower) ||
                            e.LastName.ToLower().Contains(searchTermLower))
-                           // map to DTO and filter out nulls
                 .Select(EmployeeFactory.MapToDto)
                 .Where(e => e != null);
 
@@ -103,7 +103,7 @@ public class EmployeeService(IEmployeeRepository employeeRepository) : IEmployee
         ArgumentNullException.ThrowIfNull(dto);
         try
         {
-            var existingEmployee = await _employeeRepository.GetAsync(e => e.Id == id);
+            var existingEmployee = await _employeeRepository.GetWithDetailsAsync(e => e.Id == id);
             if (existingEmployee == null)
                 return ResponseResult.NotFound($"Employee with id {id} not found");
 
