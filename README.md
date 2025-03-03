@@ -30,7 +30,7 @@ A modern project management system built with React and .NET for managing projec
 
 - Node.js (v14 or later)
 - npm or yarn
-- Docker and Docker Compose
+- Docker
 - .NET SDK 6.0 or later
 
 ### Installation
