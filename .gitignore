@@ -16,6 +16,5 @@ Thumbs.db
 
 *.sln.iml
 
-**/appsettings.json
-**/appsettings.Development.json
+src/WebApi/appsettings.json
 **/appsettings.*.json
