@@ -19,4 +19,12 @@ Thumbs.db
 src/WebApi/appsettings.json
 **/appsettings.*.json
 
-info.md 
+info.md
+
+
+.env
+.env.local
+.env.*.local
+
+
+docker-compose.override.yml 
